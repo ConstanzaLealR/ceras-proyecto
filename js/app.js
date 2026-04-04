@@ -70,7 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
       `Hola, quisiera más información: ${product.name} - $${product.price}`
     );
 
-    if (modalBtn) modalBtn.href = `https://wa.me/${phoneNumber}?text=${message}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    console.log("URL de WhatsApp generada:", whatsappUrl); // 👈 SOLO AGREGAR ESTA LÍNEA
+    
+    if (modalBtn) modalBtn.href = whatsappUrl;
   }
 
   if (closeBtn && modal) {
