@@ -1,12 +1,21 @@
 /* ===== ESTILOS EXCLUSIVOS PARA POLÍTICAS DE ENVÍO ===== */
 /* Usando la misma paleta de colores del sitio */
 
+/* ===== VARIABLES LOCALES ===== */
+:root {
+  --primary-shipping: #b95f45;
+  --primary-dark-shipping: #9e4a33;
+  --success-shipping: #6f9e7c;
+  --bg-warm-shipping: #fef9ef;
+}
+
 .shipping-header {
   background: linear-gradient(135deg, #b95f45 0%, #9e4a33 100%);
   padding: 60px 20px;
   text-align: center;
   color: white;
   margin-bottom: 40px;
+  width: 100%;
 }
 
 .shipping-header h1 {
@@ -25,6 +34,9 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px 60px 20px;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Grid de tarjetas de información */
@@ -43,6 +55,7 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(185, 95, 69, 0.1);
+  box-sizing: border-box;
 }
 
 .info-card:hover {
@@ -90,6 +103,8 @@
   margin-bottom: 60px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   border: 1px solid rgba(185, 95, 69, 0.1);
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .regions-section h2 {
@@ -194,6 +209,8 @@
   text-align: center;
   border: 1px solid rgba(185, 95, 69, 0.2);
   margin-bottom: 40px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .support-box h3 {
@@ -243,6 +260,17 @@
 
 .support-btn.email:hover {
   background: #9e4a33;
+  transform: translateY(-3px);
+}
+
+/* Botón de TikTok */
+.support-btn.tiktok {
+  background: #000000;
+  color: white;
+}
+
+.support-btn.tiktok:hover {
+  background: #25D366;
   transform: translateY(-3px);
 }
 
@@ -299,50 +327,6 @@
   transform: translateX(-3px);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .shipping-header h1 {
-    font-size: 32px;
-  }
-  
-  .shipping-header p {
-    font-size: 14px;
-  }
-  
-  .regions-section {
-    padding: 25px;
-  }
-  
-  .support-box {
-    padding: 25px;
-  }
-  
-  .region-row {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    text-align: center;
-  }
-  
-  .region-price {
-    justify-self: center;
-  }
-  
-  .region-delivery {
-    justify-self: center;
-  }
-}
-
-/* Botón de TikTok */
-.support-btn.tiktok {
-  background: #000000;
-  color: white;
-}
-
-.support-btn.tiktok:hover {
-  background: #25D366;
-  transform: translateY(-3px);
-}
-
 /* ===== RESPONSIVE MEJORADO PARA POLÍTICAS DE ENVÍO ===== */
 
 /* Tablets y celulares grandes (hasta 1024px) */
@@ -360,12 +344,14 @@
   }
 }
 
-/* Celulares (hasta 768px) */
+/* Celulares (hasta 768px) - VERSIÓN CORREGIDA */
 @media (max-width: 768px) {
   /* Header de envíos */
   .shipping-header {
     padding: 40px 15px;
     margin-bottom: 25px;
+    margin-left: 0;
+    margin-right: 0;
   }
   
   .shipping-header h1 {
@@ -379,6 +365,7 @@
   /* Contenedor principal */
   .shipping-container {
     padding: 0 15px 40px 15px;
+    box-sizing: border-box;
   }
   
   /* Grid de tarjetas */
@@ -390,6 +377,7 @@
   
   .info-card {
     padding: 20px;
+    box-sizing: border-box;
   }
   
   .info-card h3 {
@@ -412,6 +400,9 @@
     padding: 20px;
     margin-bottom: 40px;
     border-radius: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
   }
   
   .regions-section h2 {
@@ -466,6 +457,9 @@
   .support-box {
     padding: 25px 20px;
     margin-bottom: 30px;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
   }
   
   .support-box h3 {
@@ -528,6 +522,10 @@
   
   .shipping-header p {
     font-size: 12px;
+  }
+  
+  .shipping-container {
+    padding: 0 12px 30px 12px;
   }
   
   .info-card {
@@ -625,5 +623,16 @@
   
   .support-btn {
     width: auto;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1400px) {
+  .shipping-container {
+    max-width: 1300px;
+  }
+  
+  .info-grid {
+    gap: 40px;
   }
 }
